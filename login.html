@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{  
+            width: 70%;
+            height: auto;
+            margin: auto;
+            padding: 10px;
+            color: black;
+        }
+        #login{
+            width: 55%;
+            height: 300px;
+            display: grid;
+            margin: center;
+            margin-top: 50px;
+            border-radius: 15px;
+            border: 2px solid rgb(215, 215, 233);
+            background-color: rgb(51, 201, 121);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        #login > button {
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+        }
+        a{
+            text-decoration: none;
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form id="login" action="">
+        <h2 style="text-align: center;">Log In</h2>
+        <label for="">Your Email</label>
+        <input id="email" type="text">
+        <label for="">Your Password</label>
+        <input id="pass" type="password"><span><i class="fa-solid fa-eye" id="eye" onclick="toggle()"></i></span>
+        <button>Submit</button>
+    </form>
+
+    <p style="text-align: center;">If you don't have an account? <a href="signup.html"> Sign Up<span style="color: blue"></span> </a> </p>
+</body>
+</html>
+
+<script>
+    let form = document.querySelector('form');
+    form.addEventListener('submit', loginFun);
+
+    let signup_data = JSON.parse(localStorage.getItem('signupData')) || [];
+
+    function loginFun(event) {
+        event.preventDefault();
+
+        let entered_email = document.getElementById('email').value;
+        let entered_pass = document.getElementById('pass').value;
+
+        // console.log(entered_name, entered_pass);
+        let flag = false;
+        signup_data.forEach(function(el) {
+            if(el.email == entered_email && el.password == entered_pass) {
+                flag = true;
+            }
+        })
+
+        if(flag) {
+            alert('Login Successful');
+        }
+        else{
+            alert('No Account Found!! Please SignUp first');
+        }
+    }
+
+    let state=false;
+    function toggle(){
+        if(state){
+            document.getElementById("p").setAttribute("type", "password")
+            document.getElementById("eye").style.color="#7a797e"
+            state=false;
+        }
+        else{
+            document.getElementById("p").setAttribute("type", "text")
+            document.getElementById("eye").style.color="#5887ef"
+            state=true;
+        }
+    }
+</script>

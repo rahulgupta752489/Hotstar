@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <!-- <style>
+        /* body {
+            margin: 0;
+            padding: 0;
+        }
+        #carousel {
+            width: auto;
+            height: 500px;
+            margin: auto;
+            padding: 30px;
+            background-color: rgb(0, 0, 89);
+
+            text-align: center;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
+        #pic {
+            width: 100%;
+            height: 500px;
+            border-radius: 30px;
+        }
+        #movies {
+            display: inline-grid;
+            grid-template-columns: repeat(3, 1fr); /* 33% 33% 33% 
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 5%;
+        }
+        #movies div {
+            display: grid;
+            margin-bottom: 10%;
+            justify-items: center;
+        }
+        #basic {
+            display: block;
+        }
+        #poster {
+            width: 60%;
+        }
+        #loader_gif {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 25%;
+        } */
+ 
+
+     /*   2 failed
+        #carsoule {
+            text-align: center;
+            padding-bottom: 2%;
+        }
+        #carsoule img {
+            width: 100%;
+            height: 500px;
+        }
+        #poster {
+            width: 60%;
+        }
+        #loader_div {
+            height: 300px;
+            display: block;
+            align-items: center;
+        }
+        #loader_gif {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        body {
+            margin: 0;
+        }
+        #movies {
+            display: inline-grid;
+            grid-template-columns: repeat(25% 25% 25% 25%);
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 5%;
+        }
+        #movies div {
+            display: grid;
+            margin-bottom: 10%;
+            justify-items: center;
+        }
+        #poster {
+            width: 60%;
+        }
+        #navbar {
+            display: grid;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 2%;
+            background-color: rgb(0, 0, 89);
+            color: white;
+        }
+        #lhs {
+            flex: 4;
+            display: flex;
+            align-items: center;
+        }
+        #lhs h4 {
+            margin-left: 4%;
+        }
+        #rhs {
+            flex: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        */
+
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(100, 100, 136);
+        }
+        #carousel {
+            width: auto;
+            height: 500px;
+            margin: auto;
+            /* padding: 30px; */
+            background-color: rgb(3, 3, 41);
+
+            text-align: center;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
+        #pic {
+            width: 100%;
+            height: 500px;
+            border-radius: 15px;
+        }
+        #movies {
+            display: inline-grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 5%;
+        }
+        #movies div {
+            display: grid;
+            margin-bottom: 10%;
+            justify-items: center;
+            /* border: 2px solid red; */
+        }
+        #movies div p {
+           color: white;
+           font-size: 18px;
+        }
+        #movies div:hover {
+            transform: scale(1.1);
+        }
+        #movies div img {
+            width: 95%;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        #basic {
+            display: block;
+        }
+        #poster {
+            width: 60%;
+        }
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* padding-left: 1%; */
+            background-color: #131a27;
+            color: white;
+            width: 100%;
+            height: 70px;
+        }
+        #lhs {
+            flex: 4;
+            display: flex;
+            align-items: center;
+            margin-left: 50px;
+         }
+         #lhs h4 {
+            margin-left: 4%;
+        }
+        #search_div {
+            margin-top: 2%;
+            margin-left: 1%;
+        }
+        #rhs {
+            flex: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 2%;
+        }
+        #buttons button {
+            padding: 15px;
+            border-radius: 25px;
+            border: none;
+            color: white;
+            background-color: rgb(131, 0, 146);
+            cursor: pointer;
+        }
+    </style> -->
+</head>
+<body>
+    <div id="navbar">
+        <!-- appending navbar here -->
+    </div>
+
+    
+    
+    <div id="carousel"></div>
+
+    <div id="buttons">
+        <button onclick="sortLH()">Rating: Low to High</button>
+        <button onclick="sortHL()">Rating: High to Low</button>
+    </div>
+
+    <div id="loader_div">
+        <img id="loader_gif" src="https://media0.giphy.com/media/2uJ0EhZnMAMDe/200w.webp?cid=ecf05e47fwseu19o71n20vcluzu7r4o8hufuwjemqwpb8r9j&rid=200w.webp&ct=g" alt="">
+    </div>
+
+    <div id="movies"></div>
+</body>
+</html>
+
+<script type="module" src="home.js"></script>

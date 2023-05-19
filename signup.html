@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            width: 70%;
+            height: auto;
+            margin: auto;
+            padding: 10px;
+            color: rgb(59, 58, 58);
+        }
+        #form {
+            width: 45%;
+            height: 400px;
+            display: grid;
+            color: black;
+            margin-top: 50px;
+            text-align: left;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            border-radius: 15px;
+            border: 2px solid rgb(215, 215, 233);
+            background-color: rgb(51, 201, 121);
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #form > button {
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+        }
+        #para {
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form id="form" action="">
+        <h2 style="text-align: center;">Sign UP</h2>
+        <label for="">Your Name</label>
+        <input id="name" type="text" placeholder="Enter Your Name">
+        <label for="">Email</label>
+        <input id="email" type="text" placeholder="Email">
+        <label for="">Password</label>
+        <input id="pass" type="passwoed" placeholder="Choose Your Password"><span><i class="fa-solid fa-eye" id="eye" onclick="toggle()"></i></span>
+        <button>Submit</button>
+    </form>
+
+    <p id="para">Already have an account <a href="login.html">Sign In <span style="color: blue"></span></a></p>
+</body>
+</html>
+
+<script>
+    let form = document.querySelector('form');
+    form.addEventListener('submit', signupFunc);
+    let signupArr = JSON.parse(localStorage.getItem('signupData')) || [];
+
+    function signupFunc(event) {
+        event.preventDefault();
+
+        let obj = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            password: document.getElementById('pass').value,
+        }
+        signupArr.push(obj);
+        localStorage.setItem('signupData', JSON.stringify(signupArr));
+    }
+
+    let state=false;
+    function toggle(){
+        if(state){
+            document.getElementById("pass").setAttribute("type", "password")
+            document.getElementById("eye").style.color="#7a797e"
+            state=false;
+        }
+        else{
+            document.getElementById("pass").setAttribute("type", "text")
+            document.getElementById("eye").style.color="#5887ef"
+            state=true;
+        }
+    }
+</script>
